@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+$brand: #ff5757;
+$secondary: #ffffff;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.primary {
+  background: $brand;
+}
+.font {
+  color: $brand;
+}
+
+.nav-link {
+  color: $brand;
+}
+footer {
+  background: $brand;
+  color: $secondary;
+}
+.primary-button {
+  background: $brand;
+  padding: 8px 15px;
+  border-radius: 18px;
+  color: #ffffff;
+  border: 2px solid $brand;
+  transition: 0.5s;
+  &:hover {
+    background: #ffffff;
+    color: $brand;
+  }
+}
+.danger {
+  background: red;
+  padding: 8px 15px;
+  border-radius: 18px;
+  color: #ffffff;
+  border: 2px solid $brand;
+  transition: 0.5s;
+  &:hover {
+    background: #ffffff;
+    color: red;
+  }
+}
+.secondary-button {
+  background: $secondary;
+  padding: 8px 15px;
+  border-radius: 18px;
+  color: $brand;
+  border: 2px solid $brand;
+  transition: 0.5s;
+  &:hover {
+    background: $brand;
+    color: $secondary;
+  }
+}
+.hero-banner2 {
+  background-image: url(images/hero-image2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.zoom {
+  overflow: hidden;
+  position: relative;
+
+  .zoom-img {
+    transition: all 0.3s;
+    display: block;
+    transform: scale(1);
+    border-radius: 10px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+.kurkurey {
+  left: 50px;
+  bottom: 50px;
+}
+.pizza {
+  filter: brightness(70%);
+}
+.card {
+  width: 300px;
+}
+.card-title {
+  line-height: 2;
+  font-weight: Bold;
+}
+@media only screen and (max-width: 600px) {
+  .mob-hero-img {
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .zoom-img {
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+  }
+  .mob-card {
+    width: 100%;
+    img {
+      height: 300px;
+    }
+  }
+}
+.about-text {
+  line-height: 2.3;
+}
+.message {
+  font-family: "Dancing Script", cursive;
+}
+.cart-sup {
+  background: $brand;
+  padding: 3px;
+  margin: 5px;
+  color: $secondary;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.added {
+  color: $brand;
+}
+.cart {
+  background: #f1f1f1;
+}
+.cart_container {
+  max-width: 1000px;
+  margin: auto;
+}
+.clear {
+  background: none;
+  border: 0px;
+  text-decoration: underline;
+}
+.btn-danger {
+  border-radius: 18px;
+}
