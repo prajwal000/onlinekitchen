@@ -1,5 +1,5 @@
 import React from "react";
-import Pizza from "../Data/Pizza.json";
+import pizzaData from "../Data/Pizza";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
@@ -10,7 +10,7 @@ function Pizzas() {
       <section className="container py-5">
         <h2 className=" font">Pizza</h2>
         <div className="row">
-          {Pizza.map((a) => {
+          {pizzaData.map((a) => {
             return (
               <div className="col-lg-3 my-2">
                 <div className="card mob-card">

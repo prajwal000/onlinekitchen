@@ -1,26 +1,16 @@
 import React from "react";
-import Matkka from "../Data/Matka.json";
+import matka from "../Data/Matka";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 function Matka() {
-  const addToCart = (productImage, productPrice, productName) => {
-    const productData = {
-      name: productName,
-      price: productPrice,
-      image: productImage,
-    };
-    const existingCartItems = JSON.parse(localStorage.getItem("cart"));
-    existingCartItems.push(productData);
-    localStorage.setItem("cart", JSON.stringify(existingCartItems));
-  };
   return (
     <>
       <Header />
       <section className="container py-5">
         <h2 className=" font">Biryani</h2>
         <div className="row">
-          {Matkka.map((a) => {
+          {matka.map((a) => {
             return (
               <div className="col-lg-3 my-2">
                 <div className="card mob-card">
@@ -33,11 +23,7 @@ function Matka() {
                   <div className="card-body">
                     <h6 className="card-title">{a.name}</h6>
                     <p className="card-text">{a.price}</p>
-                    <button
-                      href="#"
-                      className="primary-button"
-                      onClick={() => addToCart(a.image, a.price, a.name)}
-                    >
+                    <button href="#" className="primary-button">
                       Add to Cart
                     </button>
                   </div>

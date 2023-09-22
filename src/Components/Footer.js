@@ -21,29 +21,21 @@ function Footer() {
             <div className="col-lg-2">
               <ul className="pt-4">
                 <li className="pb-2">
-                  <Link to="/" classname="text-white ">
-                    Home
-                  </Link>
+                  <Link to="/">Home</Link>
                 </li>
 
                 <li className="pb-2">
-                  <Link to="/aboutus" classname="text-white ">
-                    About us
-                  </Link>
+                  <Link to="/aboutus">About us</Link>
                 </li>
                 <li className="pb-2">
-                  <Link to="/contact" classname="text-white ">
-                    Contact Us
-                  </Link>
+                  <Link to="/contact">Contact Us</Link>
                 </li>
               </ul>
             </div>
             <div className="col-lg-2">
               <ul className="pt-4">
                 <li className="pb-2">
-                  <Link to="/menu" classname="text-white ">
-                    Menu
-                  </Link>
+                  <Link to="/menu">Menu</Link>
                 </li>
                 <li className="pb-2">Order</li>
                 <li className="pb-2">Cart</li>

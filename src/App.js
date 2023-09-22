@@ -8,14 +8,17 @@ import {
   Switch,
 } from "react-router-dom/cjs/react-router-dom.min";
 import Routes from "./Routes/Routes";
+import { ProductProvider } from "./context/productContext";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Switch>
-          <Routes />
-        </Switch>
-      </BrowserRouter>
+      <ProductProvider>
+        <BrowserRouter>
+          <Switch>
+            <Routes />
+          </Switch>
+        </BrowserRouter>
+      </ProductProvider>
     </>
   );
 }

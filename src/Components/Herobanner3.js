@@ -1,5 +1,5 @@
 import React from "react";
-import Featured from "../Data/Featured.json";
+import featuredData from "../Data/Featured";
 
 function Herobanner3() {
   const addToCart = (productName, productPrice, productImage) => {
@@ -24,7 +24,7 @@ function Herobanner3() {
       <section className="container">
         <h3 className="font py-3 pt-5">Featured</h3>
         <div className="row">
-          {Featured.map((product) => {
+          {featuredData.map((product) => {
             return (
               <div className="col-lg-3 my-2" key={product.id}>
                 <div className="card mob-card">
