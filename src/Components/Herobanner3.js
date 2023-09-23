@@ -1,22 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import featuredData from "../Data/Featured";
+import { useProductContext } from "../context/productContext";
 
 function Herobanner3() {
-  const addToCart = (productName, productPrice, productImage) => {
-    const productData = {
-      image: productImage,
-      name: productName,
-      price: productPrice,
-    };
+  const { cartHandler } = useProductContext(); // Access cartHandler from context
 
-    // Retrieve existing cart items from local storage
-    const existingCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  const [selectedProducts, setSelectedProducts] = useState({});
 
-    // Add the new product data to the cart
-    existingCartItems.push(productData);
-
-    // Store the updated cart items in local storage
-    localStorage.setItem("cart", JSON.stringify(existingCartItems));
+  const hello = (product) => {
+    setSelectedProducts((prevSelectedProducts) => ({
+      ...prevSelectedProducts,
+      [product.name]: !prevSelectedProducts[product.name],
+    }));
+    cartHandler(product);
   };
 
   return (
@@ -24,27 +20,32 @@ function Herobanner3() {
       <section className="container">
         <h3 className="font py-3 pt-5">Featured</h3>
         <div className="row">
-          {featuredData.map((product) => {
+          {featuredData.map((featuredProduct, index) => {
+            const isProductSelected = selectedProducts[featuredProduct.name];
             return (
-              <div className="col-lg-3 my-2" key={product.id}>
+              <div className="col-lg-3 my-2" key={index}>
                 <div className="card mob-card">
                   <img
-                    src={product.image}
+                    src={featuredProduct.image}
                     className="card-img-top p-4"
                     alt="..."
                     height="230px"
                   />
                   <div className="card-body">
-                    <h6 className="card-title">{product.name}</h6>
-                    <p className="card-text">{product.price}</p>
-                    <button
-                      className="primary-button"
-                      onClick={() =>
-                        addToCart(product.name, product.price, product.image)
-                      }
-                    >
-                      Add to Cart
-                    </button>
+                    <h6 className="card-title">{featuredProduct.name}</h6>
+                    <p className="card-text">{featuredProduct.price}</p>
+                    {isProductSelected ? (
+                      <span className="sucessful text-light">
+                        added to cart
+                      </span>
+                    ) : (
+                      <button
+                        className="primary-button"
+                        onClick={() => hello(featuredProduct)}
+                      >
+                        Add to Cart
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
