@@ -78,66 +78,6 @@ function Aboutus() {
               </p>
             </div>
           </div>
-          <div className="col-lg-5">
-            <img
-              src={require("../images/CEO.jpg")}
-              alt="ceo"
-              width="550px"
-              className="p-5"
-            />
-            <h3 className="ps-5 text-center ">CEO : Nayan Bhattarai</h3>
-            <h2 className="pt-5 text-center message">" Message From CEO "</h2>
-            <div className="ps-5 pe-5 pt-4 message">
-              <p className="message">Dear Esteemed Customers and Friends,</p>
-              <p>
-                I am thrilled to have this opportunity to extend my heartfelt
-                gratitude and share with you the incredible journey of our
-                company, Online Kitchen, since its inception in July 2018. As
-                the CEO, it has been a privilege to lead this exceptional team
-                and witness the growth and success we have achieved together.
-              </p>
-              <p>
-                When we started Online Kitchen, we had a vision – to
-                revolutionize the way people experience cooking and kitchen
-                essentials. Our mission was clear: to provide a seamless
-                platform where aspiring chefs, passionate home cooks, and
-                kitchen enthusiasts could find everything they need to bring
-                their culinary dreams to life.
-              </p>
-              <p>
-                Over the years, we have worked tirelessly to build a diverse
-                range of high-quality products that cater to all your kitchen
-                needs. From state-of-the-art appliances to innovative kitchen
-                tools, we have curated a collection that meets the highest
-                standards of performance, design, and durability.
-              </p>
-              <p>
-                Lastly, I want to thank you, our cherished customers and
-                partners, for entrusting Online Kitchen with your culinary
-                needs. Your support and loyalty have been the pillars of our
-                success, and we are excited about the future we are building
-                together.
-              </p>
-              <p>
-                Lastly, I want to thank you, our cherished customers and
-                partners, for entrusting Online Kitchen with your culinary
-                needs. Your support and loyalty have been the pillars of our
-                success, and we are excited about the future we are building
-                together.
-              </p>
-              <p>With sincere gratitude,</p>
-              <div className="row">
-                <div className="col-lg-6">
-                  <p>
-                    Nayan Bhattrai CEO,
-                    <br />
-                    Online Kitchen
-                  </p>
-                </div>
-                <div className="col-lg-6"></div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
       <Footer />
