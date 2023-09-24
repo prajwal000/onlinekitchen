@@ -22,8 +22,20 @@ export function ProductProvider({ children }) {
     localStorage.setItem("cart", JSON.stringify(updatedCartData));
   };
 
+  const order = (cartData, quantity) => {
+    const updatedOrder = JSON.parse(localStorage.getItem("order")) || [];
+    cartData.forEach((a) => {
+      const name = a.name;
+      const totalprice = a.price * quantity;
+      const orderItem = { name, totalprice };
+      updatedOrder.push(orderItem);
+    });
+
+    localStorage.setItem("order", JSON.stringify(updatedOrder));
+  };
+
   return (
-    <ProductContext.Provider value={{ cartHandler }}>
+    <ProductContext.Provider value={{ cartHandler, order }}>
       {children}
     </ProductContext.Provider>
   );
