@@ -30,7 +30,7 @@ const featuredData = [
     image: "https://deus.khaanpin.com/images/shop/Spaghetti_1_giEq35Z.png",
   },
   {
-    name: "Classic Combo Chicken - Momo + Pizza + Mirchi Fries",
+    name: "Classic Combo Chicken - Momo + Pizza ",
     price: " 1099",
     image: "https://deus.khaanpin.com/images/shop/classic_oTLMP9B.jpg",
   },

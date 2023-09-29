@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import pizzaData from "../Data/Pizza";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { useProductContext } from "../context/productContext";
 
-function Pizzas() {
+function Specials() {
   const { cartHandler } = useProductContext(); // Access cartHandler from context
+  const featuredData = JSON.parse(localStorage.getItem("featured") || []);
   const [selectedProducts, setSelectedProducts] = useState({});
 
   const hello = (product) => {
@@ -19,26 +19,27 @@ function Pizzas() {
       alert("please login to order");
     }
   };
+
   return (
     <>
       <Header />
-      <section className="container py-5">
-        <h2 className=" font">Pizza</h2>
+      <h3 className="text-center py-4">Our Specials</h3>
+      <section className="container">
         <div className="row">
-          {pizzaData.map((product) => {
-            const isProductSelected = selectedProducts[product.name];
+          {featuredData.map((featuredProduct, index) => {
+            const isProductSelected = selectedProducts[featuredProduct.name];
             return (
-              <div className="col-lg-3 my-2">
+              <div className="col-lg-3 my-2" key={index}>
                 <div className="card mob-card">
                   <img
-                    src={product.image}
+                    src={featuredProduct.image}
                     className="card-img-top p-4"
                     alt="..."
                     height="230px"
                   />
                   <div className="card-body">
-                    <h6 className="card-title">{product.name}</h6>
-                    <p className="card-text">Rs{product.price}</p>
+                    <h6 className="card-title">{featuredProduct.name}</h6>
+                    <p className="card-text">{featuredProduct.price}</p>
                     {isProductSelected ? (
                       <span className="sucessful text-light">
                         added to cart
@@ -46,7 +47,7 @@ function Pizzas() {
                     ) : (
                       <button
                         className="primary-button"
-                        onClick={() => hello(product)}
+                        onClick={() => hello(featuredProduct)}
                       >
                         Add to Cart
                       </button>
@@ -63,4 +64,4 @@ function Pizzas() {
   );
 }
 
-export default Pizzas;
+export default Specials;

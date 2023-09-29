@@ -11,6 +11,8 @@ import Aboutus from "../Pages/Aboutus";
 import Contactus from "../Pages/Contactus";
 import Cart from "../Pages/Cart";
 import Order from "../Pages/Order";
+import AdminPage from "../Pages/AdminPage";
+import Specials from "../Pages/Specials";
 
 const Routes = () => {
   return (
@@ -27,6 +29,8 @@ const Routes = () => {
       <Route path="/contact" component={Contactus} />
       <Route path="/cart" component={Cart} />
       <Route path="/order" component={Order} />
+      <Route path="/admin" component={AdminPage} />
+      <Route path="/specials" component={Specials} />
     </>
   );
 };

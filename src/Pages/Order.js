@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 import { Container } from "react-bootstrap";
 
 function Order() {
+  // Retrieve order items from localStorage
   const orderItems = JSON.parse(localStorage.getItem("order")) || [];
 
   return (
@@ -13,39 +14,26 @@ function Order() {
         <section className="py-5">
           <h2 className="pb-3">Your Orders</h2>
           <div className="my-3">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col">Name of product</th>
-                  <th scope="col">Price</th>
-                </tr>
-              </thead>
-              {!localStorage.getItem("order") ? (
-                <p className="text-center">
-                  {" "}
-                  you have not ordered any item yet
-                </p>
-              ) : (
-                <>
-                  <tbody>
-                    {orderItems.map((a, index) => (
-                      <tr key={index}>
-                        <td>{a.name}</td>
-                        <td>{a.totalprice}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </>
-              )}
-              <tbody>
-                {orderItems.map((a, index) => (
-                  <tr key={index}>
-                    <td>{a.name}</td>
-                    <td>{a.totalprice}</td>
+            {orderItems.length === 0 ? (
+              <p className="text-center">You have not ordered any items yet.</p>
+            ) : (
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name of product</th>
+                    <th scope="col">Price</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {orderItems.map((item, index) => (
+                    <tr key={index}>
+                      <td>{item.name}</td>
+                      <td>{item.totalprice}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
         </section>
         <img

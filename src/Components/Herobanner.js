@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Herobanner() {
+  const history = useHistory();
+  const order = () => {
+    if (!localStorage.getItem("refreshtoken")) {
+      history.replace("/");
+      alert("please login");
+    }
+  };
   return (
     <>
       <section className="container py-5">
@@ -22,9 +30,10 @@ function Herobanner() {
               curate the best resources, ensuring you experience the utmost
               satisfaction in your culinary pursuits.
             </p>
-            <Link to="/menu">
-              <button className="primary-button">Order Now</button>
-            </Link>
+
+            <button className="primary-button" onClick={order}>
+              <Link to="/menu">Order Now</Link>
+            </button>
           </div>
           <div className="col-lg-6">
             <img

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import featuredData from "../Data/Featured";
 import { useProductContext } from "../context/productContext";
 
@@ -8,11 +8,15 @@ function Herobanner3() {
   const [selectedProducts, setSelectedProducts] = useState({});
 
   const hello = (product) => {
-    setSelectedProducts((prevSelectedProducts) => ({
-      ...prevSelectedProducts,
-      [product.name]: !prevSelectedProducts[product.name],
-    }));
-    cartHandler(product);
+    if (localStorage.getItem("refreshtoken")) {
+      setSelectedProducts((prevSelectedProducts) => ({
+        ...prevSelectedProducts,
+        [product.name]: !prevSelectedProducts[product.name],
+      }));
+      cartHandler(product);
+    } else {
+      alert("please login to order");
+    }
   };
 
   return (
